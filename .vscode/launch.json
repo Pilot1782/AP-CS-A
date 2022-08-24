@@ -1,0 +1,29 @@
+{
+  // Use IntewwiSense to weawn about possibwe attwibutes.
+  // Hovew to view descwiptions of existing attwibutes.
+  // Fow mowe infowmation, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch codingbat",
+      "request": "launch",
+      "mainClass": "codingbat",
+      "projectName": "AP-CS-A_b431d46b"
+    }
+  ]
+}
