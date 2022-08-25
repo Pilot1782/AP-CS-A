@@ -1,25 +1,42 @@
-/*
-Given a non-negative int n, return the count of the occurrences of 7 as a digit, so for example 717 yields 2. (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
+/*Given an array of ints, is it possible to divide the ints into two groups, so that the sum of the two groups is the same, with these constraints: all the values that are multiple of 5 must be in one group, and all the values that are a multiple of 3 (and not a multiple of 5) must be in the other. (No loops needed.)
 
 
-count7(717) → 2
-count7(7) → 1
-count7(123) → 0
+split53([1, 1]) → true
+split53([1, 1, 1]) → false
+split53([2, 4, 2]) → true0
  */
 
 public class codingbat {
     public static void main (String[] args) {
-
+        System.out.println(split53(new int[] {1, 1}));
+        System.out.println(split53(new int[] {1, 1, 1}));
+        System.out.println(split53(new int[] {2, 4, 2}));
     }
 
-public static int count7(int n) {
-    int count = 0;
-    while (n > 0) {
-        if (n % 10 == 7) {
-            count++;
+public static boolean split53(int[] nums) {
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+        sum += nums[i];
+    }
+    if (sum % 5 == 0 && sum % 3 == 0) {
+        return true;
+    }
+    if (sum % 5 == 0) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 3 != 0) {
+                return false;
+            }
         }
-        n /= 10;
+        return true;
     }
-    return count;
+    if (sum % 3 == 0) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 5 != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    return false;
 }
 }
