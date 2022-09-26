@@ -44,6 +44,7 @@
  * @ingroup nfc_url_record_example
  * @brief NFC URL record example application main file.
  *
+ * designed as firmware for NRF52480 MDK
  */
 #include <stdint.h>
 #include "nfc_t2t_lib.h"
